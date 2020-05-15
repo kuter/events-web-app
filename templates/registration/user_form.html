@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Registration{% endblock title %}
+
+{% block content %}
+<div class="container py-md-5">
+    <h1>Registration Form</h1>
+    <div class="row col-md-6">
+        <form action="{% url 'signup' %}" method="post" accept-charset="utf-8">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_email">{{ form.email.label }}</label>
+                <input type="email" class="form-control" id="id_email" name="email" placeholder="Enter email" value="{{ form.email.value|default:"" }}" required>
+                <span class="text-danger">{{ form.email.errors }}</span>
+            </div>
+            <div class="form-group">
+                <label for="id_password1">{{ form.password1.label }}</label>
+                <input type="password" class="form-control" id="id_password1" name="password1" placeholder="Enter password" value="{{ form.password1.value|default:"" }}" required>
+                <span class="text-danger">{{ form.password1.errors }}</span>
+            </div>
+            <div class="form-group">
+                <label for="id_password2">{{ form.password2.label }}</label>
+                <input type="password" class="form-control" id="id_password2" name="password2" placeholder="Enter password confirmation" value="{{ form.password2.value|default:"" }}" required>
+                <span class="text-danger">{{ form.password2.errors }}</span>
+            </div>
+            <span class="text-danger">{{ form.non_field_errors }}</span>
+            <button type="submit" class="btn btn-secondary" value="Login">Login</button>
+    </div>
+</div>
+{% endblock content %}

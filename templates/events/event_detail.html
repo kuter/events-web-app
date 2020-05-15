@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}{{ event.title|title }}{% endblock title %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4">{{ event.title|upper }}</h1>
+
+        <!-- Author -->
+        <p class="lead">
+          event owner:
+          <a href="#">{{ event.get_owner }}</a>
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p>event date: {{ event.date }}</p>
+
+        <hr>
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+
+        <hr>
+
+        <!-- Post Content -->
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
+
+        <p>{{ event.description }}</p>
+
+      </div>
+
+      <!-- Sidebar Widgets Column -->
+      <div class="col-md-4">
+
+        <!-- Search Widget -->
+        {% if event.user == user %}
+        <div class="card my-4">
+          <h5 class="card-header">Actions</h5>
+          <div class="card-body">
+              <a href="{% url 'events:update' event.pk %}" class="btn btn-primary">Edit event</a>
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Categories Widget -->
+
+        <!-- Side Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Participants</h5>
+          <div class="card-body">
+              Amount of participants: {{ event.get_amount_of_participants }}
+              <hr />
+              {% if not is_user_participate %}
+              <a href="{% url 'events:sign-up' event.pk %}" class="btn btn-success">Sign up</a>
+              {% else %}
+              <a href="{% url 'events:withdraw' event.pk %}" class="btn btn-danger">Withdraw</a>
+              {% endif %}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+    
+{% endblock content %}

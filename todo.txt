@@ -1,0 +1,5 @@
+(A) create custom model with email as a usernamefield
+(B) user can log in
+(B) logged user can create event
+(B) user can withdraw from an event
+(A) create listview events as index page
