@@ -29,10 +29,17 @@ $ pipenv install -d
 $ pipenv run tests
 ```
 
-## Generate Sphinx documentation
+## Install development packages
+
+before you run commands below, make sure that development are installed
 
 ```
 $ pipenv install -d
+```
+
+## Generate Sphinx documentation
+
+```
 $ pipenv shell
 $ cd docs/ && make html && cd -
 ```
@@ -47,8 +54,7 @@ $ xdg-open docs/build/index.html
 ## Generate coverage report
 
 ```
-$ pipenv install -d
-$ pipenv run coverage manage.py test
+$ pipenv run coverage run manage.py test
 $ pipenv run coverage html
 ```
 
