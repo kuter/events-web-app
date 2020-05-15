@@ -25,6 +25,7 @@ $ xdg-open http://localhost:8000
 ## Running tests
 
 ```
+$ pipenv install -d
 $ pipenv run tests
 ```
 
