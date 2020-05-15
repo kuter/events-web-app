@@ -22,12 +22,6 @@ Now that the server is running visit http://localhost:8000
 $ xdg-open http://localhost:8000
 ```
 
-## Running tests
-
-```
-$ pipenv install -d
-$ pipenv run tests
-```
 
 ## Install development packages
 
@@ -35,6 +29,25 @@ before you run commands below, make sure that development are installed
 
 ```
 $ pipenv install -d
+```
+
+## Running tests
+
+```
+$ pipenv run tests
+```
+
+## Generate coverage report
+
+```
+$ pipenv run coverage run manage.py test
+$ pipenv run coverage html
+```
+
+open `htmlcov/index.html` with your browser
+
+```
+$ xdg-open htmlcov/index.html
 ```
 
 ## Generate Sphinx documentation
@@ -48,18 +61,4 @@ check generated docs
 
 ```
 $ xdg-open docs/build/index.html
-```
-
-
-## Generate coverage report
-
-```
-$ pipenv run coverage run manage.py test
-$ pipenv run coverage html
-```
-
-open `htmlcov/index.html` with your browser
-
-```
-$ xdg-open htmlcov/index.html
 ```
