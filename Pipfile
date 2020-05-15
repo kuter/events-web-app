@@ -8,9 +8,14 @@ wemake-python-styleguide = ">=0.14.0"
 factory-boy = ">=2.12.0"
 coverage = "*"
 pre-commit = "*"
+sphinx = ">=3.0.3"
 
 [packages]
 django = ">=3.0.6"
 
 [requires]
 python_version = "3.8"
+
+[scripts]
+server = "python manage.py runserver 0:8000"
+tests = "python manage.py test"
