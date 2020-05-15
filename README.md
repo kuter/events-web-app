@@ -1,4 +1,4 @@
- Events Web App
+# Events Web App
 
 ## Running project
 
