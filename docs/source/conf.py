@@ -16,7 +16,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath('../../'))
 
-from docs.source.django import setup  # noqa: I001, F401
+from docs.source.django import setup  # noqa: E402, F401, I001
 
 # -- Project information -----------------------------------------------------
 

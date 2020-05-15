@@ -12,6 +12,7 @@ $ docker-compose up
 
 ```
 $ pipenv install
+$ pipenv run python manage.py migrate
 $ pipenv run server
 ```
 
