@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -136,6 +137,13 @@ STATICFILES_DIRS = [
 DEFAULT_FROM_EMAIL = 'admin@even.ts'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+try:
+    import behave_django  # noqa: W0611
+except ModuleNotFoundError:
+    pass
+else:
+    INSTALLED_APPS += ['behave_django']
+
 # Allow any settings to be defined in local_settings.py which should be
 # ignored in your version control system allowing for settings to be
 # defined per machine.
@@ -145,3 +153,4 @@ try:
         apply_settings(globals())
 except (ImportError, NameError):
     pass
+

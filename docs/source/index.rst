@@ -12,6 +12,7 @@ Welcome to Events Web App
 
    pages/events
    pages/participants
+   pages/features
 
 Indices and tables
 ==================

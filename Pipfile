@@ -9,6 +9,8 @@ factory-boy = ">=2.12.0"
 coverage = "*"
 pre-commit = "*"
 sphinx = ">=3.0.3"
+behave-django = "*"
+splinter = {extras = ["django"],version = "*"}
 
 [packages]
 django = ">=3.0.6"
