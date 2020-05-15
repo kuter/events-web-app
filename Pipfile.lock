@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e81d21ffc20dea089e0d2ae3e00d1825e475889ff9b514e23e503404c5887d96"
+            "sha256": "215848d2a31f85f8fc372e5a0810a42d526372468a8cd557f0c39e2f524c6f0a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -47,6 +47,13 @@
         }
     },
     "develop": {
+        "appdirs": {
+            "hashes": [
+                "sha256:7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41",
+                "sha256:a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"
+            ],
+            "version": "==1.4.4"
+        },
         "astor": {
             "hashes": [
                 "sha256:070a54e890cefb5b3739d19f30f5a5ec840ffc9c50ffa7d23cc9fc1a38ebbfc5",
@@ -67,6 +74,13 @@
                 "sha256:41e75315853507aa145d62a78a2a6c5e3240fe14ee7c601459d0df9418196065"
             ],
             "version": "==1.6.2"
+        },
+        "cfgv": {
+            "hashes": [
+                "sha256:1ccf53320421aeeb915275a196e23b3b8ae87dea8ac6698b1638001d4a486d53",
+                "sha256:c8e8f552ffcc6194f4e18dd4f68d9aef0c0d58ae7e7be8c82bee3c5e9edfa513"
+            ],
+            "version": "==3.1.0"
         },
         "coverage": {
             "hashes": [
@@ -112,6 +126,12 @@
             ],
             "version": "==1.3.0"
         },
+        "distlib": {
+            "hashes": [
+                "sha256:2e166e231a26b36d6dfe35a48c4464346620f8645ed0ace01ee31822b288de21"
+            ],
+            "version": "==0.3.0"
+        },
         "docutils": {
             "hashes": [
                 "sha256:0c5b78adfbf7762415433f5515cd5c9e762339e23369dbe8000d84a4bf4ab3af",
@@ -139,6 +159,13 @@
                 "sha256:34ae397aef03a0a17910452f1e8430d57fa59e2d67b20e9b637218e8f7dd22b3"
             ],
             "version": "==4.1.0"
+        },
+        "filelock": {
+            "hashes": [
+                "sha256:18d82244ee114f543149c66a6e0c14e9c4f8a1044b5cdaadd0f82159d6a6ff59",
+                "sha256:929b7d63ec5b7d6b71b0fa5ac14e030b3f70b75747cef1b10da9b879fef15836"
+            ],
+            "version": "==3.0.12"
         },
         "flake8": {
             "hashes": [
@@ -248,6 +275,13 @@
             ],
             "version": "==3.1.2"
         },
+        "identify": {
+            "hashes": [
+                "sha256:23c18d97bb50e05be1a54917ee45cc61d57cb96aedc06aabb2b02331edf0dbf0",
+                "sha256:88ed90632023e52a6495749c6732e61e08ec9f4f04e95484a5c37b9caf40283c"
+            ],
+            "version": "==1.4.15"
+        },
         "isort": {
             "extras": [
                 "pyproject"
@@ -265,6 +299,12 @@
             ],
             "version": "==0.6.1"
         },
+        "nodeenv": {
+            "hashes": [
+                "sha256:5b2438f2e42af54ca968dd1b374d14a1194848955187b0e5e4be1f73813a5212"
+            ],
+            "version": "==1.3.5"
+        },
         "pbr": {
             "hashes": [
                 "sha256:07f558fece33b05caf857474a366dfcc00562bca13dd8b47b2b3e22d9f9bf55c",
@@ -278,6 +318,14 @@
                 "sha256:a33d38177056321a167decd6ba70b890856ba5025f0a8eca6a3eda607da93caf"
             ],
             "version": "==0.9.1"
+        },
+        "pre-commit": {
+            "hashes": [
+                "sha256:5559e09afcac7808933951ffaf4ff9aac524f31efbc3f24d021540b6c579813c",
+                "sha256:703e2e34cbe0eedb0d319eff9f7b83e2022bb5a3ab5289a6a8841441076514d0"
+            ],
+            "index": "pypi",
+            "version": "==2.4.0"
         },
         "pycodestyle": {
             "hashes": [
@@ -392,6 +440,13 @@
                 "sha256:f8d2bd89d25bc39dabe7d23df520442fa1d8969b82544370e03d88b5a591c392"
             ],
             "version": "==3.7.4.2"
+        },
+        "virtualenv": {
+            "hashes": [
+                "sha256:b4c14d4d73a0c23db267095383c4276ef60e161f94fde0427f2f21a0132dde74",
+                "sha256:fd0e54dec8ac96c1c7c87daba85f0a59a7c37fe38748e154306ca21c73244637"
+            ],
+            "version": "==20.0.20"
         },
         "wemake-python-styleguide": {
             "hashes": [
