@@ -27,13 +27,17 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ListComponent } from './events/list/list.component';
+import { CreateComponent } from './events/create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    LogoutComponent
+    LogoutComponent,
+    ListComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
