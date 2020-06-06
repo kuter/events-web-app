@@ -4,6 +4,11 @@ from django.contrib import admin
 from django.urls import include, path
 
 from rest_framework import routers
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+    TokenVerifyView,
+)
 
 from events import api
 
@@ -12,6 +17,15 @@ router.register(r'events', api.EventViewSet)
 
 
 urlpatterns = [
+    path(
+        'api/token/',
+        TokenObtainPairView.as_view(),
+        name='token-obtain-pair',
+    ),
+    path(
+        'api/token/refresh/', TokenRefreshView.as_view(), name='token-refresh',
+    ),
+    path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
     path('api/', include(router.urls)),
     path('participants/', include('participants.urls')),
     path('admin/', admin.site.urls),
