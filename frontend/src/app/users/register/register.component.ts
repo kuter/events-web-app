@@ -23,7 +23,8 @@ export class RegisterComponent {
   private prepareRequest(form) {
     return {
       email: form.value.email,
-      password: form.value.password
+      password: form.value.password,
+      password2: form.value.passwordRepeat
     };
   }
 
@@ -32,6 +33,7 @@ export class RegisterComponent {
   onSubmit() {
     this.isLoadingResults = true;
     this.data = this.prepareRequest(this.registerForm);
+    console.log(this.data);
     this.api.register(this.data)
       .subscribe((res: any) => {
         console.log(res);

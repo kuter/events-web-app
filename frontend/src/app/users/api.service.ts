@@ -54,7 +54,7 @@ export class ApiService {
   // Register
   register(data: object) {
     console.log(data);
-    const url = `${apiUrl}/register/`;
+    const url = `${apiUrl}/api/register/`;
     return this.http.post<object>(url, data, httpOptions).pipe(
       tap((c: object) => console.log(c)),
       catchError(this.handleError<object>('register'))

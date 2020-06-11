@@ -10,10 +10,12 @@ from rest_framework_simplejwt.views import (
     TokenVerifyView,
 )
 
-from events import api
+from events import api as events_api
+from participants import api as participants_api
 
 router = routers.DefaultRouter()
-router.register(r'events', api.EventViewSet)
+router.register(r'events', events_api.EventViewSet)
+router.register(r'register', participants_api.UserViewSet, basename='register')
 
 
 urlpatterns = [
