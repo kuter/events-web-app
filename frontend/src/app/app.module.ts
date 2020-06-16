@@ -29,6 +29,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ListComponent } from './events/list/list.component';
 import { CreateComponent } from './events/create/create.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CreateComponent } from './events/create/create.component';
     RegisterComponent,
     LogoutComponent,
     ListComponent,
-    CreateComponent
+    CreateComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
