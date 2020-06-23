@@ -9,3 +9,8 @@ class EventViewSet(viewsets.ModelViewSet):
 
     queryset = Event.objects.all()
     serializer_class = EventSerializer
+
+    def create(self, request, *args, **kwargs):
+        """Add user to request.data."""
+        request.data.update({'user': request.user.pk})
+        return super().create(request, *args, **kwargs)

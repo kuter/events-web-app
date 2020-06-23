@@ -25,18 +25,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getMovies(): Observable<object[]> {
-    console.log(apiUrl);
-    return this.http.get<object[]>(apiUrl)
-    .pipe(
-      map(posts => posts),
-        tap(posts => console.log('fetched movies')),
-        catchError(this.handleError('getMovies', []))
-    );
-  }
-
-  createMovie(movie: object) {
-    return this.http.post<object>(apiUrl, movie, httpOptions).pipe(
+  createMovie(event: object) {
+    console.log('elo');
+    const requestUrl = `${apiUrl}/api/events/`;
+    return this.http.post<object>(requestUrl, event, httpOptions).pipe(
       tap((c: object) => console.log(c)),
       catchError(this.handleError<object>('createMovie'))
     );
