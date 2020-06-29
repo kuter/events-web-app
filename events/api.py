@@ -14,3 +14,5 @@ class EventViewSet(viewsets.ModelViewSet):
         """Add user to request.data."""
         request.data.update({'user': request.user.pk})
         return super().create(request, *args, **kwargs)
+
+# flake8: noqa DAR201
