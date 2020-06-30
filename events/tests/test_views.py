@@ -139,6 +139,15 @@ class EventCreateTests(LoginRequiredMixin, TestCase):
 
         self.assertEqual(event.user, self.user)
 
+    def test_should_not_allowed_event_in_the_past(self):
+        payload = factory.build(
+            dict, FACTORY_CLASS=EventFactory, date=YESTERDAY
+        )
+
+        response = self.client.post(self.url, payload)
+
+        self.assertFalse(response.context['form'].is_valid())
+
 
 class EventDetailTests(LoginRequiredMixin, TestCase):
     url_name = 'events:detail'

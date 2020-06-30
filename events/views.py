@@ -8,6 +8,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.list import ListView
 
+from .forms import EventCreateForm
 from .models import Event
 
 
@@ -31,8 +32,9 @@ class EventCreate(LoginRequiredMixin, CreateView):
     """Event create view."""
 
     model = Event
-    fields = ['title', 'description', 'date']
     template_name = 'events/event_form_create.html'
+    form_class = EventCreateForm
+
 
     def form_valid(self, form):
         """Set Event owner."""  # noqa: DAR101, DAR201
