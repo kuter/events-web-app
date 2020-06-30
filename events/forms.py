@@ -17,4 +17,4 @@ class EventCreateForm(forms.ModelForm):
         Returns:
             datetime: cleaned date
         """
-        return is_valid_event_date(self.clean_data['date'])
+        return is_valid_event_date(self.cleaned_data['date'])
