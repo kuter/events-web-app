@@ -9,11 +9,8 @@ from factory import Iterator
 
 from ..factories import EventFactory, EventParticipantFactory, UserFactory
 from ..models import Event, EventParticipant
+from .test_base import TODAY, YESTERDAY, TOMORROW, NEXT_WEEK
 
-TODAY = datetime.date.today()
-YESTERDAY = TODAY - datetime.timedelta(days=1)
-TOMORROW = TODAY + datetime.timedelta(days=1)
-NEXT_WEEK = TODAY + datetime.timedelta(weeks=1)
 
 
 class LoginRequiredMixin:
@@ -132,7 +129,7 @@ class EventCreateTests(LoginRequiredMixin, TestCase):
         self.assertIsLoginRequired(response)
 
     def test_method_should_set_current_user_as_event_owner(self):
-        payload = factory.build(dict, FACTORY_CLASS=EventFactory, user='')
+        payload = factory.build(dict, FACTORY_CLASS=EventFactory, user='', date=TOMORROW)
 
         response = self.client.post(self.url, payload)
         event = Event.objects.get(**resolve(response.url).kwargs)

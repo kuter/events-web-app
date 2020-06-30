@@ -3,6 +3,7 @@ import datetime
 from django import forms
 
 from .models import Event
+from .validators import is_valid_event_date
 
 
 class EventCreateForm(forms.ModelForm):
@@ -22,6 +23,4 @@ class EventCreateForm(forms.ModelForm):
             ValidationError: when date is in the past
         """
         date = self.cleaned_data['date']
-        if date <= datetime.date.today():
-            raise forms.ValidationError('You cannot create event in the past')
-        return date
+        return is_valid_event_date(date)
