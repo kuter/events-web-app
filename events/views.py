@@ -15,7 +15,7 @@ from .models import Event
 @login_required
 def sign_up(request, pk):
     """Sign up for event."""
-    event = get_object_or_404(Event, pk=pk)
+    event = get_object_or_404(Event.objects.incoming(), pk=pk)
     event.eventparticipant_set.get_or_create(event=event, user=request.user)
     return redirect(event.get_absolute_url())
 

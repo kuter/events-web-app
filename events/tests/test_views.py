@@ -73,7 +73,7 @@ class SignUpWithdrawCommonMixin(LoginRequiredMixin):
         self.assertEqual(response.status_code, 404)
 
     def test_should_redirect_to_event_detail_url(self):
-        event = EventFactory.create()
+        event = EventFactory.create(date=TOMORROW)
         url = reverse(self.url_name, args=[event.pk])
 
         response = self.client.get(url)
@@ -87,12 +87,24 @@ class SignUpTests(SignUpWithdrawCommonMixin, TestCase):
     url_name = 'events:sign-up'
 
     def test_should_create_EventParticipant_object(self):
-        event = EventFactory.create()
+        event = EventFactory.create(date=TOMORROW)
         url = reverse(self.url_name, args=[event.pk])
 
         self.client.get(url)
 
         self.assertTrue(
+            EventParticipant.objects.filter(
+                event=event, user=self.user,
+            ).exists(),
+        )
+
+    def test_should_not_be_able_to_sign_up_to_past_event(self):
+        event = EventFactory.create(date=YESTERDAY)
+        url = reverse(self.url_name, args=[event.pk])
+
+        self.client.get(url)
+
+        self.assertFalse(
             EventParticipant.objects.filter(
                 event=event, user=self.user,
             ).exists(),
