@@ -1,5 +1,3 @@
-import datetime
-
 from django import forms
 
 from .models import Event
@@ -18,9 +16,5 @@ class EventCreateForm(forms.ModelForm):
 
         Returns:
             datetime: cleaned date
-
-        Raises:
-            ValidationError: when date is in the past
         """
-        date = self.cleaned_data['date']
-        return is_valid_event_date(date)
+        return is_valid_event_date(self.clean_data['date'])

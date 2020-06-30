@@ -12,4 +12,8 @@ class EventSerializer(serializers.ModelSerializer):
         fields = ['title', 'description', 'date']
 
     def validate_date(self, value):
+        """Check if future date."""
         return is_valid_event_date(value)
+
+
+# flake8: noqa DAR201

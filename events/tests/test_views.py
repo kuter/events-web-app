@@ -9,8 +9,7 @@ from factory import Iterator
 
 from ..factories import EventFactory, EventParticipantFactory, UserFactory
 from ..models import Event, EventParticipant
-from .test_base import TODAY, YESTERDAY, TOMORROW, NEXT_WEEK
-
+from .test_base import NEXT_WEEK, TODAY, TOMORROW, YESTERDAY
 
 
 class LoginRequiredMixin:

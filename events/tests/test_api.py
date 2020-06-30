@@ -1,11 +1,12 @@
-import factory
-
 from django.test import TestCase
-from rest_framework.test import APIClient
-from ..factories import UserFactory,EventFactory
+
+import factory
 from rest_framework.reverse import reverse_lazy
-from .test_base import TODAY, YESTERDAY, TOMORROW, NEXT_WEEK
 from rest_framework.status import HTTP_400_BAD_REQUEST
+from rest_framework.test import APIClient
+
+from ..factories import EventFactory, UserFactory
+from .test_base import NEXT_WEEK, TODAY, TOMORROW, YESTERDAY
 
 
 class EventViewSetTests(TestCase):
