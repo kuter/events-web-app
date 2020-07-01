@@ -7,7 +7,9 @@ from django.urls import resolve, reverse, reverse_lazy
 import factory
 from factory import Iterator
 
-from ..factories import EventFactory, EventParticipantFactory, UserFactory
+from participants.factories import UserFactory
+
+from ..factories import EventFactory, EventParticipantFactory
 from ..models import Event, EventParticipant
 from .test_base import NEXT_WEEK, TODAY, TOMORROW, YESTERDAY
 

@@ -9,7 +9,7 @@ from rest_framework.reverse import reverse_lazy
 from rest_framework.status import HTTP_200_OK
 from rest_framework.test import APIClient
 
-from events.factories import UserFactory
+from ..factories import UserFactory
 
 
 class SignUpApiViewTests(TestCase):

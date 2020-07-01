@@ -6,7 +6,7 @@ from django.urls import reverse, reverse_lazy
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 
-from events.factories import UserFactory
+from ..factories import UserFactory
 
 
 class LoginRequiredMixin:
