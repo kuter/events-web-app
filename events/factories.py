@@ -1,21 +1,11 @@
 import datetime
 
-from django.contrib.auth import get_user_model
-
 import factory
 from factory.fuzzy import FuzzyDate
 
+from participants.factories import UserFactory
+
 from .models import Event, EventParticipant
-
-
-class UserFactory(factory.DjangoModelFactory):
-    """User factory."""
-
-    username = factory.Faker('user_name')
-    email = factory.Faker('email')
-
-    class Meta:
-        model = get_user_model()
 
 
 class EventFactory(factory.DjangoModelFactory):

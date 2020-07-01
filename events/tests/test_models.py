@@ -1,6 +1,8 @@
 from django.test import TestCase
 
-from ..factories import EventFactory, EventParticipantFactory, UserFactory
+from participants.factories import UserFactory
+
+from ..factories import EventFactory, EventParticipantFactory
 from ..models import get_sentinel_user
 
 
