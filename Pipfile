@@ -11,7 +11,7 @@ pre-commit = "*"
 sphinx = ">=3.0.3"
 behave-django = "*"
 splinter = {extras = ["django"],version = "*"}
-isort = "<=5.0.0"
+isort = "<5.0.0"
 
 [packages]
 django = ">=3.0.6"
