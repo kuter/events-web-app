@@ -6,7 +6,7 @@ from django.db import models
 from django.utils.encoding import force_text
 from django.utils.html import strip_tags
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
 get_wsgi_application()
 
 
