@@ -13,6 +13,7 @@ Feature: Events
         When I click on "Create event" menu item
         Then I should see "Login Form" heading
 
+    @chrome_driver
     Scenario: User cannot create event in the past
         Given I'm logged in
         And I see index page
