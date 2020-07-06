@@ -10,6 +10,14 @@ $ docker-compose up
 
 ### pipenv
 
+make sure that you've got pipenv installed:
+
+```
+$ pip install pipenv
+```
+
+then run follwing commands:
+
 ```
 $ pipenv install
 $ pipenv run python manage.py migrate
