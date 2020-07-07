@@ -70,3 +70,6 @@ class EventParticipant(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
     )
+
+    class Meta:
+        unique_together = [['event', 'user']]
