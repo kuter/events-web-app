@@ -1,3 +1,4 @@
+from django.db import IntegrityError
 from django.test import TestCase
 
 from participants.factories import UserFactory
@@ -29,3 +30,13 @@ class EventTests(TestCase):
         rv = event.get_amount_of_participants()
 
         self.assertEqual(rv, AMOUNT)
+
+
+class EventParticipantTests(TestCase):
+
+    def test_should_not_allow_to_create_duplicate_object(self):
+        user = UserFactory.create(email='owner@bar.foo')
+        event = EventFactory.create(user=user)
+
+        with self.assertRaises(IntegrityError):
+            EventParticipantFactory.create_batch(2, event=event, user=user)
