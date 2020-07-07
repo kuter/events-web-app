@@ -35,8 +35,8 @@ class EventTests(TestCase):
 class EventParticipantTests(TestCase):
 
     def test_should_not_allow_to_create_duplicate_object(self):
-        user = UserFactory.create(email='owner@bar.foo')
-        event = EventFactory.create(user=user)
+        user = UserFactory.create()
+        event = EventFactory.create()
 
         with self.assertRaises(IntegrityError):
             EventParticipantFactory.create_batch(2, event=event, user=user)
