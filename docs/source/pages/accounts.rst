@@ -1,3 +1,3 @@
-.. automodule:: participants
+.. automodule:: accounts
     :members:
     :show-inheritance:

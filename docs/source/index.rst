@@ -11,7 +11,7 @@ Welcome to Events Web App
    :caption: Contents:
 
    pages/events
-   pages/participants
+   pages/accounts
    pages/features
 
 Indices and tables
