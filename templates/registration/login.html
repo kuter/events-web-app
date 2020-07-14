@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block title %}Login{% endblock title %}
 
@@ -8,19 +9,10 @@
     <div class="row col-md-6">
         <form action="." method="post" accept-charset="utf-8">
             {% csrf_token %}
-            <div class="form-group">
-                <label for="id_username">{{ form.username.label }}</label>
-                <input type="email" class="form-control" id="id_username" name="username" placeholder="Enter email" required>
-                <span class="text-danger">{{ form.username.errors }}</span>
-            </div>
-            <div class="form-group">
-                <label for="id_password">{{ form.password.label }}</label>
-                <input type="password" class="form-control" id="id_password" name="password" placeholder="Enter password" required>
-                <span class="text-danger">{{ form.password.errors }}</span>
-            </div>
-            <span class="text-danger">{{ form.non_field_errors }}</span>
+            {{ form|crispy }}
             <button type="submit" class="btn btn-secondary" value="Login">Login</button>
             <a class="btn btn-light" href="{% url 'password_reset' %}">Reset password</a>
+        </form>
     </div>
 </div>   
 {% endblock content %}

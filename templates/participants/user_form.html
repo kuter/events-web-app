@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block title %}Edit profile{% endblock title %}
 
@@ -8,26 +9,7 @@
     <div class="row col-md-6">
         <form action="" method="post" accept-charset="utf-8">
             {% csrf_token %}
-            <div class="form-group">
-                <label for="id_email">{{ form.email.label }}</label>
-                <input type="email" class="form-control" id="id_email" name="email" placeholder="Enter email" value="{{ form.email.value|default:"" }}" required>
-                <span class="text-danger">{{ form.email.errors }}</span>
-            </div>
-            <div class="form-group">
-                <label for="id_username">{{ form.username.label }}</label>
-                <input type="username" class="form-control" id="id_username" name="username" placeholder="Enter username" value="{{ form.username.value|default:"" }}" required>
-                <span class="text-danger">{{ form.username.errors }}</span>
-            </div>
-            <div class="form-group">
-                <label for="id_first_name">{{ form.first_name.label }}</label>
-                <input type="first_name" class="form-control" id="id_first_name" name="first_name" placeholder="Enter first_name" value="{{ form.first_name.value|default:"" }}" required>
-                <span class="text-danger">{{ form.first_name.errors }}</span>
-            </div>
-            <div class="form-group">
-                <label for="id_last_name">{{ form.last_name.label }}</label>
-                <input type="last_name" class="form-control" id="id_last_name" name="last_name" placeholder="Enter last_name" value="{{ form.last_name.value|default:"" }}" required>
-                <span class="text-danger">{{ form.last_name.errors }}</span>
-            </div>
+            {{ form|crispy }}
             <button type="submit" class="btn btn-secondary" value="Edit">Edit</button>
         </form>
     </div>

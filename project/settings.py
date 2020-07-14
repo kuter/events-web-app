@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'rest_framework',
     'corsheaders',
     'participants',
@@ -188,6 +189,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ),
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Allow any settings to be defined in local_settings.py which should be
 # ignored in your version control system allowing for settings to be
