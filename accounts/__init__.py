@@ -1,30 +1,30 @@
 """
-Participants
-------------
+Accounts
+--------
 
 Models
 ~~~~~~
 
-.. automodule:: participants.models
+.. automodule:: accounts.models
     :members:
 
 Views
 ~~~~~
 
-.. automodule:: participants.views
+.. automodule:: accounts.views
     :members:
     :show-inheritance:
 
 Forms
 ~~~~~
 
-.. automodule:: participants.forms
+.. automodule:: accounts.forms
     :members:
 
 Admin
 ~~~~~
 
-.. automodule:: participants.admin
+.. automodule:: accounts.admin
     :members:
 
 """

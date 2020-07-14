@@ -3,7 +3,7 @@ import datetime
 import factory
 from factory.fuzzy import FuzzyDate
 
-from participants.factories import UserFactory
+from accounts.factories import UserFactory
 
 from .models import Event, EventParticipant
 

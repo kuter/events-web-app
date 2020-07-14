@@ -5,7 +5,7 @@ from rest_framework.reverse import reverse_lazy
 from rest_framework.status import HTTP_400_BAD_REQUEST
 from rest_framework.test import APIClient
 
-from participants.factories import UserFactory
+from accounts.factories import UserFactory
 
 from ..factories import EventFactory
 from .test_base import NEXT_WEEK, TODAY, TOMORROW, YESTERDAY

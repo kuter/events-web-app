@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'rest_framework',
     'corsheaders',
-    'participants',
+    'accounts',
     'events',
 ]
 
@@ -76,12 +76,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
-AUTH_USER_MODEL = 'participants.User'
+AUTH_USER_MODEL = 'accounts.User'
 
 # Login/Logout views settings
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-LOGIN_URL = '/participants/login/'
+LOGIN_URL = '/accounts/login/'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

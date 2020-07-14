@@ -1,7 +1,7 @@
 from django.db import IntegrityError
 from django.test import TestCase
 
-from participants.factories import UserFactory
+from accounts.factories import UserFactory
 
 from ..factories import EventFactory, EventParticipantFactory
 from ..models import get_sentinel_user
