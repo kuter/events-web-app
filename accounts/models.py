@@ -9,7 +9,9 @@ from .managers import UserManager
 class User(AbstractUser):
     """Custom user model with email as a username."""
 
-    username = models.CharField(_('username'), max_length=50, blank=True)
+    username = models.CharField(
+        _('username'), max_length=50, blank=True, null=True,
+    )
     email = models.EmailField(_('email'), unique=True)
 
     USERNAME_FIELD = 'email'
