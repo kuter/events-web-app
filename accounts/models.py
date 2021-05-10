@@ -22,3 +22,12 @@ class User(AbstractUser):
     def get_absolute_url(self):
         """Canonical URL for an object."""  # noqa: DAR201
         return reverse('profile')
+
+    def get_name(self):
+        """Local part of the email.
+
+        Returns:
+            str: event owner
+
+        """
+        return self.email.split('@')[0]

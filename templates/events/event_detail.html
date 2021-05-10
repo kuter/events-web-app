@@ -16,7 +16,7 @@
         <!-- Author -->
         <p class="lead">
           event owner:
-          <a href="#">{{ event.get_owner }}</a>
+          <a href="#">{{ event.user.get_name }}</a>
         </p>
 
         <hr>
@@ -57,7 +57,7 @@
         <div class="card my-4">
           <h5 class="card-header">Participants</h5>
           <div class="card-body">
-              Amount of participants: {{ event.get_amount_of_participants }}
+              Amount of participants: {{ event.num_participants }}
               <hr />
               {% if not is_user_participate %}
               <a href="{% url 'events:sign-up' event.pk %}" class="btn btn-success">Sign up</a>

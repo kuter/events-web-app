@@ -4,18 +4,19 @@ from django.test import TestCase
 from accounts.factories import UserFactory
 
 from ..factories import EventFactory, EventParticipantFactory
-from ..models import get_sentinel_user
+from ..models import Event, get_sentinel_user
+from .test_base import TOMORROW
 
 
 class EventTests(TestCase):
 
     def test_should_return_event_owner(self):
         user = UserFactory.create(email='owner@bar.foo')
-        event = EventFactory.create(user=user)
+        EventFactory.create(user=user, date=TOMORROW)
 
-        rv = event.get_owner()
+        event = Event.objects.incoming().first()
 
-        self.assertEqual(rv, 'owner')
+        self.assertEqual(event.user.get_name(), 'owner')
 
     def test_get_sentinel_user_should_return_user_with_username_deleted(self):
         rv = get_sentinel_user()
@@ -24,12 +25,13 @@ class EventTests(TestCase):
 
     def test_should_return_amount_of_participants(self):
         AMOUNT = 3
-        event = EventFactory.create()
-        EventParticipantFactory.create_batch(AMOUNT, event=event)
+        EventParticipantFactory.create_batch(
+            AMOUNT, event=EventFactory.create(date=TOMORROW)
+        )
 
-        rv = event.get_amount_of_participants()
+        event = Event.objects.incoming().first()
 
-        self.assertEqual(rv, AMOUNT)
+        self.assertEqual(event.num_participants, AMOUNT)
 
 
 class EventParticipantTests(TestCase):

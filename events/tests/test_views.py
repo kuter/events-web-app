@@ -164,7 +164,7 @@ class EventDetailTests(LoginRequiredMixin, TestCase):
 
     def setUp(self):
         super().setUp()
-        self.event = EventFactory.create()
+        self.event = EventFactory.create(date=TOMORROW)
         self.url = reverse(self.url_name, args=[self.event.pk])
 
     def test_is_particiapte_should_be_false_for_anonymous_user(self):

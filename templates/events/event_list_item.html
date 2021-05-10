@@ -5,8 +5,8 @@
            -->
         <div class="card-body">
             <h4 class="card-title">{{ event.title|upper }}</h4>
-            <p class="cart-subtitle">owner: {{ event.get_owner }}</p>
-            <p class="cart-text">participants amount: {{ event.get_amount_of_participants }}</p>
+            <p class="cart-subtitle">owner: {{ event.user.get_name }}</p>
+            <p class="cart-text">participants amount: {{ event.num_participants }}</p>
             <p class="card-text">date: {{ event.date }}</p>
         </div>
         <div class="card-footer">

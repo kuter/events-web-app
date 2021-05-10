@@ -49,15 +49,6 @@ class Event(models.Model):
         """Event detail url."""  # noqa: DAR201
         return reverse('events:detail', args=[self.pk])
 
-    def get_owner(self):
-        """Local part of the email.
-
-        Returns:
-            str: event owner
-
-        """
-        return self.user.email.split('@')[0]
-
     def get_amount_of_participants(self):
         """Event participants count."""  # noqa: DAR201
         return self.eventparticipant_set.count()
