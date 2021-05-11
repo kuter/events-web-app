@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 import factory
 
 
-class UserFactory(factory.DjangoModelFactory):
+class UserFactory(factory.django.DjangoModelFactory):
     """User factory."""
 
     username = factory.Faker('user_name')

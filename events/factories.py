@@ -8,7 +8,7 @@ from accounts.factories import UserFactory
 from .models import Event, EventParticipant
 
 
-class EventFactory(factory.DjangoModelFactory):
+class EventFactory(factory.django.DjangoModelFactory):
     """DjangoModelFactory for object Event."""
 
     title = factory.Faker('bs')
@@ -20,7 +20,7 @@ class EventFactory(factory.DjangoModelFactory):
         model = Event
 
 
-class EventParticipantFactory(factory.DjangoModelFactory):
+class EventParticipantFactory(factory.django.DjangoModelFactory):
     """Factory for EventParticipant model."""
 
     event = factory.SubFactory(EventFactory)
